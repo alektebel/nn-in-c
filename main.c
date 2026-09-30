@@ -188,7 +188,8 @@ if (create_array(&labels, 60000, 1) != 0) {
     fprintf(stderr, "Failed to allocate labels array\n");
     return 1;
 }
-    load_data("/data/data/com.termux/files/home/cpp/nn/mnist_train.csv", &images, &labels);
+    /* relative to the project dir, so `make && ./main` works from anywhere */
+    load_data("mnist_train.csv", &images, &labels);
     // Initialize input matrix with some values
     //
 printf("After loading:\n");
